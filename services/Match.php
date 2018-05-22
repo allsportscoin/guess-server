@@ -103,7 +103,7 @@ class Match extends ServiceBase {
             }
         }
         foreach ($arrWin as $addr => $val) {
-            $num = round((($odds - 1) * 0.9 + 1) * $val);
+            $num = round($odds * $val);
             $txid = '';
             $insertId = PrizeRecordService::insert($matchId, $addr, $num, $odds, $txid);
             if (false === $insertId) {
